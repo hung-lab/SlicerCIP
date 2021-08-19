@@ -717,7 +717,7 @@ class CIP_LesionModelWidget(ScriptedLoadableModuleWidget):
 
         # Add a listener to the fiducials node to know when the user added a new seed and register it
         fiducialsNode = self.logic.getNthFiducialsListNode(self.currentVolume, index)
-        fiducialsNode.AddObserver(fiducialsNode.MarkupAddedEvent, self.__onAddedSeed__)
+        fiducialsNode.AddObserver(fiducialsNode.PointPositionDefinedEvent, self.__onAddedSeed__)
 
         # Lesion type
         self.lesionTypeRadioButtonGroup.buttons()[0].setChecked(True)
@@ -2579,5 +2579,3 @@ class CIP_LesionModelTest(ScriptedLoadableModuleTest):
 
         self.delayDisplay('Test passed!')
         # self.assertTrue(True)
-
-
